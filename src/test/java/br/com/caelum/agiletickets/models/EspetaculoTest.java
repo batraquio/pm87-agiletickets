@@ -1,5 +1,6 @@
 package br.com.caelum.agiletickets.models;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -96,6 +97,11 @@ public class EspetaculoTest {
 		List<Sessao> listaSessoes = ivete.criaSessoes(inicio, fim, horario, Periodicidade.DIARIA);
 		Assert.assertEquals(1, listaSessoes.size());
 		
+	}
+	
+	@Test
+	public void testFail() {
+		fail("falha proposital");
 	}
 	
 }
