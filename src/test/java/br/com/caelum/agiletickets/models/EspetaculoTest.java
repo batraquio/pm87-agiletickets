@@ -2,7 +2,6 @@ package br.com.caelum.agiletickets.models;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.List;
 
@@ -99,9 +98,6 @@ public class EspetaculoTest {
 		
 	}
 	
-	@Test
-	public void testFail() {
-		fail("falha proposital");
-	}
+
 	
 }
