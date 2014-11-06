@@ -44,6 +44,7 @@ public class EspetaculoTest {
 		ivete.getSessoes().add(sessaoComIngressosSobrando(2));
 
 		assertFalse(ivete.Vagas(15));
+		assertTrue(false);
 	}
 
 	@Test
