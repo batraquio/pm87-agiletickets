@@ -31,7 +31,7 @@ public class EstabelecimentoTest {
 	public static void teardown() {
 		browser.close();
 	}
-
+	
 	@Test
 	public void aoAdicionarUmEstabelecimentoDeveMostraLoNaTabela() throws Exception {
 		estabelecimentos.abreListagem();
