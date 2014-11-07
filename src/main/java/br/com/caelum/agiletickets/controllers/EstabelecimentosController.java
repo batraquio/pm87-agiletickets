@@ -43,8 +43,4 @@ public class EstabelecimentosController {
 		diretorio.adiciona(estabelecimento);
 		result.redirectTo(this).lista();
 	}
-<<<<<<< .merge_file_HOfvY6
-
-=======
->>>>>>> .merge_file_tULX55
 }
