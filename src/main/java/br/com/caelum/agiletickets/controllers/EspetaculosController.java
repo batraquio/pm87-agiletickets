@@ -103,16 +103,21 @@ public class EspetaculosController {
 			result.notFound();
 			return;
 		}
-
+		
+		if (quantidade == null) {
+			validator.add(new ValidationMessage("A quantidade deve ser informada.", ""));
+		} 
+		
+		validator.onErrorRedirectTo(this).sessao(sessao.getId());
+		
 		if (quantidade < 1) {
 			validator.add(new ValidationMessage("Você deve escolher um lugar ou mais", ""));
 		}
-
+		
 		if (!sessao.podeReservar(quantidade)) {
 			validator.add(new ValidationMessage("Não existem ingressos disponíveis", ""));
 		}
 
-		// em caso de erro, redireciona para a lista de sessao
 		validator.onErrorRedirectTo(this).sessao(sessao.getId());
 
 		BigDecimal precoTotal = CalculadoraDePrecos.calcula(sessao, quantidade);

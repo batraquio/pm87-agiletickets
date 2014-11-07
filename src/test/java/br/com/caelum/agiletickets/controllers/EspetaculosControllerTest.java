@@ -118,5 +118,20 @@ public class EspetaculosControllerTest {
 		assertThat(sessao.getIngressosDisponiveis(), is(2));
 	}
 	
+	@Test(expected=ValidationException.class)
+	public void deveriaInformarQuantidadeAoReservar() {
+		Espetaculo espetaculo = new Espetaculo();
+		espetaculo.setTipo(TipoDeEspetaculo.TEATRO);
+
+		Sessao sessao = new Sessao();
+		sessao.setPreco(new BigDecimal("10.00"));
+		sessao.setTotalIngressos(5);
+		sessao.setEspetaculo(espetaculo);
+
+		when(agenda.sessao(1234L)).thenReturn(sessao);
+
+		controller.reserva(1234L, null);
+	}
+	
 
 }
